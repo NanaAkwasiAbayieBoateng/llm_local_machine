@@ -1,1 +1,1 @@
-# local_llm
+# llm on a local machine
