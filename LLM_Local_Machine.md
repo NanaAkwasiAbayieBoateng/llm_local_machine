@@ -1,3 +1,13 @@
+---
+layout: post
+title: Seeral Ways To Run LLM's On Your Local Machine
+subtitle:  LLM's On Zero Dollars
+gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
+gh-badge: [star, fork, follow]
+tags: [LLM, Ollama, Huggingface, Llama, VLLM, LM Studio, GPT4All]
+---
+
+
 ### Overview
 
 Large language models (LLMs) have revolutionized natural language processing by enabling advanced applications such as text generation, sentiment analysis, and conversational agents. Running these models on a local machine allows developers and enthusiasts to leverage their power without relying on cloud services, promoting greater accessibility and experimentation. However, successfully implementing LLMs locally necessitates a thorough understanding of the associated hardware and software requirements, as well as optimal setup procedures. To effectively utilize LLMs on a personal computer, users must meet specific hardware specifications, including system compatibility, adequate memory, and powerful GPUs capable of handling extensive computational tasks. For instance, models with billions of parameters demand substantial RAM and GPU resources, making it essential for users to evaluate their system capabilities before installation. Additionally, software frameworks like TensorFlow and PyTorch are integral to managing LLMs, necessitating a well-configured environment to ensure seamless operation. Setting up a local environment involves several critical steps, including creating virtual environments, installing necessary libraries, and managing dependencies. Users must also navigate potential challenges such as installation errors and performance optimization, particularly regarding memory management and GPU acceleration. Addressing these concerns is crucial for maximizing the performance and responsiveness of LLMs on personal machines, allowing users to tailor models to specific tasks effectively. While local implementation of LLMs is increasingly accessible, it is not without its complexities. Notable challenges include hardware limitations, compatibility issues, and the need for efficient troubleshooting strategies. Understanding these intricacies is vital for users aiming to harness the full potential of LLMs, ensuring they can execute advanced AI applications locally while mitigating common pitfalls associated with setup and performance optimization.
@@ -365,6 +375,14 @@ else:
     print("Error: ", response.status_code, response.text)
 ```
 
+
+![png](/img/local_llm/ollama_3.2b.png)
+![png](/img/local_llm/ollama_powershell1.png)
+![png](/img/local_llm/ollama_terminal.png)
+
+
+
+
 ### Hugginface
 
 
@@ -504,11 +522,16 @@ Getting started with GPT4All is easy. Simply download the application from the N
 GPT4All is a powerful tool that is democratizing access to LLMs. With its continued development, GPT4All is poised to play a major role in the future of artificial intelligence. The recent update of GPT4All v3.4.0, which includes faster models and expanded filetype support. GPT4All is not only for individuals but can also be used by businesses for enterprise purposes.
 
 
+![png](/img/local_llm/gpt4all2.png)
+![png](/img/local_llm/gpt4all1.png)
+
+
+
+
+
+
+
 ## LM Studio
-
-https://lmstudio.ai/
-
-
 
 
 
@@ -534,6 +557,16 @@ LM Studio is a powerful application that allows you to run large language models
 **Cost and Availability:** LM Studio is free to use for personal purposes, making it an accessible option for individuals and hobbyists.
 
 
+
+![png](/img/local_llm/lmstudio1.png)
+![png](/img/local_llm/lmstudio2.png)
+![png](/img/local_llm/lmstudio3.png)
+![png](/img/local_llm/lmstudio4.png)
+
+
+
+
+
 ### JellyBox
 
 
@@ -542,7 +575,8 @@ LM Studio is a powerful application that allows you to run large language models
 Jellybox is a powerful AI development platform that allows you to build, train, and deploy custom AI models directly on your computer. It offers a wide range of tools and services, including chatbots, image recognition, natural language processing, and more. Jellybox's user-friendly interface makes it easy to get started with AI development. Jellybox supports running AI models locally both on macOS and windows. There are executable files that can be downloaded from [jellybox](https://jellybox.com/) website and installed locally to support running AI models locally and entirely offline.
 
 
-
+![png](/img/local_llm/jellybox1.png)
+![png](/img/local_llm/jellybox2.png)
 
 
 ### Local AI
@@ -563,6 +597,11 @@ curl http://localhost:8080/v1/chat/completions \
     -d '{ "model": "llama-3.2-1b-instruct:q4_k_m", "messages": [{"role": "user", "content": "How are you doing?", "temperature": 0.1}] }'
 
 ```
+
+![png](/img/local_llm/localai_output.png)
+
+
+
 
 
 ### llama cpp
@@ -866,7 +905,9 @@ print(output)
 
 
 ```python
+
 print(output['choices'][0]['text']) #
+
 ```
 
     What was the impact of the Industrial Revolution on global trade? The Industrial Revolution, which began in Britain in the late 18th century and spread to other parts of the world in the 19th century, had a profound impact on global trade. Hinweis: Your answer should be in the form of a well-structured essay, with an introduction, body, and conclusion.
@@ -1025,6 +1066,10 @@ cmake --build build -j --target llama-cli
   --hf-file llama-7b.Q2_K.gguf \
   -p "what was in the beginning?,"
   ```
+
+![png](/img/local_llm/llama_file1.png)
+![png](/img/local_llm/llama_file2.png)
+
 
 
 ```python
@@ -1280,6 +1325,11 @@ llamafile is a new format introduced by Mozilla. It combines llama.cpp with Cosm
 ```chmod +x TinyLlama-1.1B-Chat-v1.0.Q5_K_M.llamafile ``` . You'll need to grant permission for your computer to execute this new file using `chmod`. On windows, the downloaded llama file should be renamed as an executable file, thus `.exe` will have to be added to the end of the filename. Eg. `TinyLlama-1.1B-Chat-v1.0.Q5_K_M.llamafile.exe` and run afterwards. 
 
 You can interact with llm in the terminal after running the executable file and also  through the chat interface on browser which opens  automatically otherwise pointed at `http://localhost:8080/`
+
+
+![png](/img/local_llm/llama_file1.png)
+![png](/img/local_llm/llama_file2.png)
+
 
 
 ```python
@@ -1606,49 +1656,4 @@ print(text)
 # Corrected Sentence: Every fall, the family goes to the mountains.       
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    FileNotFoundError                         Traceback (most recent call last)
-
-    Cell In[4], line 5
-          1 #!pip install 'litgpt[all]'
-          3 from litgpt import LLM
-    ----> 5 llm = LLM.load("microsoft/phi-2")
-          6 text = llm.generate("Fix the spelling: Every fall, the familly goes to the mountains.")
-          7 print(text)
-    
-
-    File c:\Users\nboateng\AppData\Local\anaconda3\Lib\site-packages\litgpt\api.py:180, in LLM.load(cls, model, init, tokenizer_dir, access_token, distribute)
-        177 allowed_init = {"pretrained", "random"}
-        179 if init == "pretrained":
-    --> 180     checkpoint_dir = auto_download_checkpoint(model_name=model, access_token=access_token, ignore_tokenizer_files=tokenizer_dir is not None)
-        181     config = Config.from_file(checkpoint_dir / "model_config.yaml")
-        183 elif init == "random":
-    
-
-    File c:\Users\nboateng\AppData\Local\anaconda3\Lib\site-packages\litgpt\utils.py:634, in auto_download_checkpoint(model_name, access_token, ignore_tokenizer_files)
-        632         checkpoint_dir = Path("checkpoints") / checkpoint_dir
-        633     else:
-    --> 634         raise e
-        636 return checkpoint_dir
-    
-
-    File c:\Users\nboateng\AppData\Local\anaconda3\Lib\site-packages\litgpt\utils.py:625, in auto_download_checkpoint(model_name, access_token, ignore_tokenizer_files)
-        623 checkpoint_dir = extend_checkpoint_dir(Path(model_name))
-        624 try:
-    --> 625     check_valid_checkpoint_dir(checkpoint_dir, verbose=False, raise_error=True, ignore_tokenizer_files=ignore_tokenizer_files)
-        626 except FileNotFoundError as e:
-        627     if access_token is None:
-    
-
-    File c:\Users\nboateng\AppData\Local\anaconda3\Lib\site-packages\litgpt\utils.py:131, in check_valid_checkpoint_dir(checkpoint_dir, model_filename, verbose, raise_error, ignore_tokenizer_files)
-        128     print(error_message, file=sys.stderr)
-        130 if raise_error:
-    --> 131     raise FileNotFoundError(f"checkpoint_dir {str(checkpoint_dir.absolute())!r}{problem}.")
-        132 else:
-        133     raise SystemExit(1)
-    
-
-    FileNotFoundError: checkpoint_dir 'c:\\Users\\nboateng\\OneDrive - Nice Systems Ltd\\Documents\\Research\\LLM\\llm_local_machine\\checkpoints\\microsoft\\phi-2' is missing the files: ['lit_model.pth', 'model_config.yaml', 'tokenizer.json OR tokenizer.model', 'tokenizer_config.json'].
-
+![png](/img/local_llm/litGPT.png)
